@@ -1,0 +1,16 @@
+.footerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #333;
+  min-height: 4rem;
+  font-size: 0.85rem;
+}
+
+.footerWrapper > img {
+  display: inline-block;
+  padding: 0 2px;
+  object-position: 0px -1px;
+  width: 22px;
+}

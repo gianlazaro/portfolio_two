@@ -1,0 +1,103 @@
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scrolling {
+  from {
+    transform: translateX(650px);
+  }
+  to {
+    transform: translateX(-1200px);
+  }
+}
+
+.experimentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.experimentWrapper > .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 4rem;
+  position: relative;
+}
+
+.experimentWrapper > a {
+  width: max-content;
+  align-self: center;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #005EFF;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.experimentWrapper > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.experimentWrapper > a:active {
+  background: #004aca;
+}
+
+.stamp {
+  width: 150px;
+  height: 150px;
+  padding: 6px;
+  border-radius: 50%;
+  animation: spinning 6s infinite linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -4s);
+  z-index: 1;
+  backdrop-filter: blur(3px);
+  border: 1px solid #1a1a1a;
+}
+
+.experimentCarousel {
+  display: flex;
+  gap: 2rem;
+  height: 300px;
+  white-space: nowrap;
+  animation: scrolling 7s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -2s);
+}
+
+.experimentCarousel > img {
+    height: 100%;
+    border-radius: 6px;
+    border: 1px solid #1a1a1a;
+    object-fit: cover;
+  }
+
+@media screen and (max-width: 500px) {
+  .experimentCarousel {
+
+    height: 250px;
+    min-width: 250px;
+    gap: 1rem;
+  }
+  .stamp {
+    position: absolute;
+    top: -4rem;
+    left: 1rem;
+  }
+
+  .experimentWrapper {
+    margin-top: 6rem;
+  }
+}

@@ -1,0 +1,11 @@
+.App {
+  width: 100vw;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a1a;
+    color: white;
+  }
+}
